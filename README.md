@@ -9,6 +9,7 @@ Proyecto full stack
 - Consultas a base de datos MySQL desde el lado del servidor con getServerSideProps
 - Consultas a base de datos MySQL desde el lado del servidor con la api de nextjs.
 - useContext para manejar los datos desde la api: [Documentación](https://react.dev/reference/react/useContext)
+- axios
 
 ## Instalar Prisma
 
