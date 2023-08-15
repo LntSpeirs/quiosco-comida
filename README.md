@@ -2,22 +2,52 @@
 
 Proyecto full stack
 
-- Next.js
-- Tailwindcss
-- Prisma como ORM para la base de datos mysql [Documentacion](https://www.prisma.io/)
+- Next.js [Documentación](https://nextjs.org/)
+- Tailwindcss [Documentación](https://tailwindui.com/)
+- Prisma como ORM para la base de datos mysql [Documentación](https://www.prisma.io/)
 - SWR para el comportamiento en tiempo real [Documentación](https://swr.vercel.app/es-ES)
 
 ## Instalar Prisma
 
+```bash
 npm i -D prisma
+# Luego
 npm i @prisma/client
+# Luego
 npx prisma init
+```
 
-- Despues de modificar los modelos en el schema.prisma: npx prisma migrate dev
-- Si tenemos datos de prueba y queremos eliminarlos: npx prisma migrate reset
-- Para ver los modelos en el navegador: npx prisma studio
+## Crear y rellenar tablas en la base de datos con Prisma
 
-- Para hacer seed con los datos de prueba a la base de datos instalamos ts-node: npm i ts-node para ejecutar el archivo seed.ts con el compando personalizado que creamos en package.json: npx prisma db seed
+- Despues de modificar los modelos en el schema.prisma con las tablas y campos que necesitamos:
+
+```bash
+npx prisma migrate dev
+```
+
+- Si tenemos datos de prueba y queremos eliminarlos:
+
+```bash
+npx prisma migrate reset
+```
+
+- Para ver los modelos en el navegador:
+
+```bash
+npx prisma studio
+```
+
+- Para hacer seed con los datos de prueba a la base de datos instalamos ts-node:
+
+```bash
+npm i ts-node
+```
+
+- Para ejecutar el archivo seed.ts con el comando personalizado que creamos en package.json:
+
+```bash
+npx prisma db seed
+```
 
 ## Getting Started
 
