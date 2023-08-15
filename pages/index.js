@@ -1,13 +1,16 @@
+import Layout from "../layout/Layout";
 import { PrismaClient } from "@prisma/client";
 
-export default function Home({categorias}) {
-  //este console.log se ve en el lado del cliente
-  console.log(categorias)
-  return <h1>Next js</h1>;
+export default function Home() {
+  return (
+    <Layout>
+      <h1>Next js</h1>
+    </Layout>
+  );
 }
 
 //Consultar base de datos en el lado del servidor de next
-export const getServerSideProps = async () => {
+/* export const getServerSideProps = async () => {
   const prisma = new PrismaClient();
 
   const categorias = await prisma.categoria.findMany();
@@ -20,3 +23,4 @@ export const getServerSideProps = async () => {
     }
   }
 };
+ */

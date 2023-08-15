@@ -6,14 +6,25 @@ Proyecto full stack
 - Tailwindcss [Documentación](https://tailwindui.com/)
 - Prisma como ORM para la base de datos mysql [Documentación](https://www.prisma.io/)
 - SWR para el comportamiento en tiempo real [Documentación](https://swr.vercel.app/es-ES)
+- Consultas a base de datos MySQL desde el lado del servidor con getServerSideProps
+- Consultas a base de datos MySQL desde el lado del servidor con la api de nextjs.
+- useContext para manejar los datos desde la api: [Documentación](https://react.dev/reference/react/useContext)
 
 ## Instalar Prisma
 
 ```bash
 npm i -D prisma
-# Luego
+```
+
+- Luego instalamos el cliente prisma que se usa para comunicar con la base de datos con Prisma
+
+```bash
 npm i @prisma/client
-# Luego
+```
+
+- Luego inicializamos prisma
+
+```bash
 npx prisma init
 ```
 
