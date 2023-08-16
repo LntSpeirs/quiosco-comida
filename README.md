@@ -10,6 +10,9 @@ Proyecto full stack
 - Consultas a base de datos MySQL desde el lado del servidor con la api de nextjs.
 - useContext para manejar los datos desde la api: [Documentación](https://react.dev/reference/react/useContext)
 - axios
+- React - modal: npm install react-modal
+- Heroicons: [Web](https://heroicons.com/)
+- Notificaciones con react-toastify [github](https://fkhadra.github.io/react-toastify/introduction) [npm](https://www.npmjs.com/package/react-toastify)
 
 ## Instalar Prisma
 

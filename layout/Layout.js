@@ -1,9 +1,28 @@
+import ModalProducto from "@/components/ModalProducto";
 import Sidebar from "@/components/Sidebar";
+import useQuiosco from "@/hooks/useQuiosco";
 import Head from "next/head";
-import { Children } from "react";
 /* import { PrismaClient } from "@prisma/client"; */
+import Modal from "react-modal";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+Modal.setAppElement("#__next");
 
 const Layout = ({ children, pagina }) => {
+  const { modal } = useQuiosco();
   return (
     <>
       <Head>
@@ -19,6 +38,23 @@ const Layout = ({ children, pagina }) => {
           <div className="pt-10">{children}</div>
         </main>
       </div>
+      {modal && (
+        <Modal isOpen={modal} style={customStyles}>
+          <ModalProducto />
+        </Modal>
+      )}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 };
