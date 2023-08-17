@@ -12,6 +12,7 @@ const QuioscoProvider = ({ children }) => {
   const [modal, setModal] = useState(false);
   const [pedido, setPedido] = useState([]);
   const [nombre, setNombre] = useState("");
+  const [total, setTotal] = useState(0);
 
   const router = useRouter();
 
@@ -27,6 +28,14 @@ const QuioscoProvider = ({ children }) => {
   useEffect(() => {
     setCategoriaActual(categorias[0]);
   }, [categorias]);
+
+  useEffect(() => {
+    const nuevoTotal = pedido.reduce(
+      (total, producto) => producto.precio * producto.cantidad + total,
+      0
+    );
+    setTotal(nuevoTotal);
+  }, [pedido]);
 
   const handleClickCategoria = (id) => {
     const categoria = categorias.filter((c) => c.id === id);
@@ -89,6 +98,23 @@ const QuioscoProvider = ({ children }) => {
     setPedido(pedidoActualizado);
   };
 
+  const colocarOrden = async (e) => {
+    e.preventDefault();
+    //console.log("enviar orden a cocina (base de datos)");
+    try {
+      //El objeto de la orden debe tener los mismos campos definidos en el schema de Prisma para poder guardarlo en la base de datos
+      const { data } = await axios.post("/api/ordenes", {
+        pedido,
+        nombre,
+        total,
+        fecha: Date.now().toString(),
+      });
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <QuioscoContext.Provider
       value={{
@@ -105,6 +131,8 @@ const QuioscoProvider = ({ children }) => {
         handleEliminarProducto,
         nombre,
         setNombre,
+        colocarOrden,
+        total,
       }}
     >
       {children}
