@@ -1,4 +1,5 @@
 import ModalProducto from "@/components/ModalProducto";
+import Pasos from "@/components/Pasos";
 import Sidebar from "@/components/Sidebar";
 import useQuiosco from "@/hooks/useQuiosco";
 import Head from "next/head";
@@ -35,7 +36,10 @@ const Layout = ({ children, pagina }) => {
         </aside>
 
         <main className="md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen overflow-y-scroll">
-          <div className="pt-10">{children}</div>
+          <div className="pt-10">
+            <Pasos />
+            {children}
+          </div>
         </main>
       </div>
       {modal && (

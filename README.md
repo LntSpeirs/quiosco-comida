@@ -14,6 +14,10 @@ Proyecto full stack
 - Heroicons: [Web](https://heroicons.com/)
 - Notificaciones con react-toastify [github](https://fkhadra.github.io/react-toastify/introduction) [npm](https://www.npmjs.com/package/react-toastify)
 
+[![Pagina principal](https://i.postimg.cc/3x8N1fbh/Index.png)](https://postimg.cc/SJPmNdh1)
+[![Resumen.png](https://i.postimg.cc/ZK1jy3f6/Resumen.png)](https://postimg.cc/vct5J1wm)
+[![Total.png](https://i.postimg.cc/Df11YD54/Total.png)](https://postimg.cc/jCdWDMpR)
+
 ## Instalar Prisma
 
 ```bash
