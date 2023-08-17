@@ -5,6 +5,19 @@ import { PrismaClient } from "@prisma/client";
 export default async function handler(req, res) {
   const prisma = new PrismaClient();
 
+  //OBTENER ORDENES---------------------------------------------------------------------------
+  const ordenes = await prisma.orden.findMany({
+    where: {
+      estado: false,
+    },
+  });
+  //console.log(ordenes);
+  res.status(200).json(ordenes);
+
+  //------------------------------------------------------------------------------------------
+
+  //CREAR ORDENES-----------------------------------------------------------------------------
+
   if (req.method === "POST") {
     //Este apartado solo se ve en el lado del servidor
     //console.log(req.body)
@@ -18,8 +31,9 @@ export default async function handler(req, res) {
       },
     });
 
-    res.json(orden);
-  } else {
-    res.json("Método no aceptado en este endpoint.");
-  }
+    res.status(200).json(orden);
+  } /* else {
+    res.status(405).json("Método no aceptado en este endpoint.");
+  } */
+  //------------------------------------------------------------------------------------------
 }
