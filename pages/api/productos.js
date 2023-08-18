@@ -18,4 +18,5 @@ export default async function handler(req, res) {
 
   //respondemos al cliente con los productos
   res.status(200).json(productos)
+  await prisma.$disconnect()
 }

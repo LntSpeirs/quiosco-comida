@@ -15,6 +15,7 @@ export default async function handler(req, res) {
       },
     });
     res.status(200).json(ordenActualizada);
+    await prisma.$disconnect()
   } else {
     res.status(405).json("Metodo no admitido en este endpoint");
   }

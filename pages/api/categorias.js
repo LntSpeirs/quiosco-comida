@@ -14,9 +14,11 @@ export default async function handler(req, res) {
     }
   })
 
+
   //Este console.log solo se ve en el lado del servidor
 /*   console.log(categorias); */
 
   //respondemos al cliente con las categorias
   res.status(200).json(categoriasConProductos)
+  await prisma.$disconnect()
 }

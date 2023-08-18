@@ -13,6 +13,7 @@ export default async function handler(req, res) {
   });
   //console.log(ordenes);
   res.status(200).json(ordenes);
+  await prisma.$disconnect()
 
   //------------------------------------------------------------------------------------------
 
