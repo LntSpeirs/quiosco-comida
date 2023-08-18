@@ -18,6 +18,9 @@ Proyecto full stack
 [![Resumen.png](https://i.postimg.cc/ZK1jy3f6/Resumen.png)](https://postimg.cc/vct5J1wm)
 [![Total.png](https://i.postimg.cc/Df11YD54/Total.png)](https://postimg.cc/jCdWDMpR)
 
+En la ruta /admin veremos el panel con los pedidos en el lado de la cocina:
+[![administracion.png](https://i.postimg.cc/MHKWN5fj/administracion.png)](https://postimg.cc/LYwKZzTH)
+
 ## Instalar Prisma
 
 ```bash
