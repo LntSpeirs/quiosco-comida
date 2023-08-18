@@ -7,10 +7,20 @@ export default function Admin() {
   //Esto se ejecuta en el lado del cliente
 
   const fetcher = () => axios("/api/ordenes").then((datos) => datos.data);
+  const fetcherCompletadas = () =>
+    axios("/api/ordenesCompletadas").then((datos) => datos.data);
 
   const { data, error, isLoading } = useSWR("/api/ordenes", fetcher, {
     refreshInterval: 5000,
   });
+
+  const { data:completadas, errorCompletadas, isLoadingCompletadas } = useSWR(
+    "/api/ordenesCompletadas",
+    fetcherCompletadas,
+    {
+      refreshInterval: 5000,
+    }
+  );
   /* console.log(data);
   console.log(error);
   console.log(isLoading); */
@@ -23,6 +33,13 @@ export default function Admin() {
         data.map((orden) => <Orden key={orden.id} orden={orden} />)
       ) : (
         <p>No hay ordenes pendientes.</p>
+      )}
+
+      <p className="text-2xl my-10 ms-5">Ordenes Completadas</p>
+      {completadas && completadas.length ? (
+        completadas.map((orden) => <Orden key={orden.id} orden={orden} />)
+      ) : (
+        <p>No hay ordenes completadas.</p>
       )}
     </AdminLayout>
   );
