@@ -1,9 +1,5 @@
 ## Quiosco-app
 
-Proyecto desplegado en netlify:
-[Pagina del cliente](https://quiosco-comida-app.netlify.app/)
-Los pedidos se actualizan en tiempo real en el [panel cocina](https://quiosco-comida-app.netlify.app/admin)
-
 Proyecto full stack
 
 - Next.js [Documentación](https://nextjs.org/)
